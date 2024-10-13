@@ -16,10 +16,10 @@ import {
 } from './route.js';
 
 export const execute = (argv: string[]) => {
-  console.log(argv);
   const inputFile = parsePrimaryArg(argv);
   const unit = parseUnitArg(argv);
   const outputFile = parseOutputFileArg(argv);
+  console.log({ outputFile });
 
   let data: string[];
   try {
@@ -43,7 +43,8 @@ export const execute = (argv: string[]) => {
   );
   const routeTypeMapRows = data.slice(routeTypeMapMarker);
   const sharedByAllTotalRow = data[sharedByAllMarker]!;
-  const middlewareRow = middlewareMarker ? data[middlewareMarker] : undefined;
+  const middlewareRow =
+    middlewareMarker !== undefined ? data[middlewareMarker] : undefined;
 
   const routeTypeMap = generateRouteTypeMap(routeTypeMapRows);
   const routes = generateRoutes(routeRows, routeTypeMap, unit);
@@ -58,7 +59,7 @@ export const execute = (argv: string[]) => {
     unit,
   };
 
-  if (middleware) {
+  if (middleware !== undefined) {
     output.middleware = middleware;
   }
 

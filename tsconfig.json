@@ -21,5 +21,5 @@
 
     "declaration": true
   },
-  "exclude": ["src/**/*.test.ts", "dist/**/*"]
+  "exclude": ["**/*.test.ts", "dist/**/*"]
 }

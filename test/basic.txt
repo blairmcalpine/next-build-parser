@@ -1,0 +1,40 @@
+
+> next build
+
+   ▲ Next.js 14.0.1
+   - Environments: .env
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/7) ...
+
+   Generating static pages (1/7)
+
+   Generating static pages (3/7)
+
+   Generating static pages (5/7)
+
+ ✓ Generating static pages (7/7)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+┌ λ /                                    1.1 kB          125 kB
+├ λ /_not-found                          875 B          86.2 kB
+├ λ /api/trpc/[trpc]                     0 B                0 B
+├ λ /create                              15.5 kB         140 kB
+├ λ /popular                             1.1 kB          125 kB
+├ λ /puzzle/[id]                         8.15 kB         132 kB
+├ ℇ /puzzle/[id]/opengraph-image         0 B                0 B
+└ λ /recent                              1.1 kB          125 kB
++ First Load JS shared by all            85.3 kB
+  ├ chunks/472-9100b5fcfec8f88c.js       30 kB
+  ├ chunks/fd9d1056-853251486b1823c6.js  53.3 kB
+  ├ chunks/main-app-842b2bfec3a562ae.js  231 B
+  └ chunks/webpack-b7a1470890cdd00b.js   1.79 kB
+
+
+λ  (Dynamic)       server-rendered on demand using Node.js
+ℇ  (Edge Runtime)  server-rendered on demand using the Edge Runtime

@@ -62,8 +62,8 @@ const parseArg = <S extends z.ZodSchema>(
   if (typeof argName === 'number') {
     arg = argv[argName];
   } else {
-    const argIndex = process.argv.indexOf(argName);
-    arg = argIndex > 0 ? process.argv[argIndex + 1] : options?.defaultValue;
+    const argIndex = argv.indexOf(argName);
+    arg = argIndex > 0 ? argv[argIndex + 1] : options?.defaultValue;
   }
   const result = schema.safeParse(arg);
   if (!result.success) {
