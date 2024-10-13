@@ -4,7 +4,7 @@ import { cli } from '../src/cli.js';
 
 describe('cli', () => {
   it('should write the output to a file if the --output flag is provided', () => {
-    vi.spyOn(fs, 'writeFileSync');
+    vi.spyOn(fs, 'writeFileSync').mockImplementation(() => {});
     cli([
       'node',
       'index.js',
