@@ -1,0 +1,80 @@
+{
+  "routes": [
+    {
+      "routeTypeIcon": "λ",
+      "routeType": "Dynamic",
+      "route": "/",
+      "size": 1.1,
+      "firstLoad": 125
+    },
+    {
+      "routeTypeIcon": "λ",
+      "routeType": "Dynamic",
+      "route": "/_not-found",
+      "size": 0.85,
+      "firstLoad": 86.2
+    },
+    {
+      "routeTypeIcon": "λ",
+      "routeType": "Dynamic",
+      "route": "/api/trpc/[trpc]",
+      "size": 0,
+      "firstLoad": 0
+    },
+    {
+      "routeTypeIcon": "λ",
+      "routeType": "Dynamic",
+      "route": "/create",
+      "size": 15.5,
+      "firstLoad": 140
+    },
+    {
+      "routeTypeIcon": "λ",
+      "routeType": "Dynamic",
+      "route": "/popular",
+      "size": 1.1,
+      "firstLoad": 125
+    },
+    {
+      "routeTypeIcon": "λ",
+      "routeType": "Dynamic",
+      "route": "/puzzle/[id]",
+      "size": 8.15,
+      "firstLoad": 132
+    },
+    {
+      "routeTypeIcon": "ℇ",
+      "routeType": "Edge",
+      "route": "/puzzle/[id]/opengraph-image",
+      "size": 0,
+      "firstLoad": 0
+    },
+    {
+      "routeTypeIcon": "λ",
+      "routeType": "Dynamic",
+      "route": "/recent",
+      "size": 1.1,
+      "firstLoad": 125
+    }
+  ],
+  "sharedByAll": [
+    {
+      "chunk": "chunks/472-9100b5fcfec8f88c.js",
+      "size": 30
+    },
+    {
+      "chunk": "chunks/fd9d1056-853251486b1823c6.js",
+      "size": 53.3
+    },
+    {
+      "chunk": "chunks/main-app-842b2bfec3a562ae.js",
+      "size": 0.23
+    },
+    {
+      "chunk": "chunks/webpack-b7a1470890cdd00b.js",
+      "size": 1.79
+    }
+  ],
+  "sharedByAllTotal": 85.3,
+  "unit": "kB"
+}

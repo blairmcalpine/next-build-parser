@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`next-build-parser > should parse the build file 1`] = `
+exports[`execute > should parse the build file 1`] = `
 {
   "routes": [
     {
@@ -83,7 +83,7 @@ exports[`next-build-parser > should parse the build file 1`] = `
 }
 `;
 
-exports[`next-build-parser > should parse the build file and output based on the --output flag 1`] = `
+exports[`execute > should parse the build file and output based on the unit option 1`] = `
 {
   "routes": [
     {

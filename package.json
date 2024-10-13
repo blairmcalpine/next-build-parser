@@ -21,6 +21,7 @@
   "files": [
     "dist"
   ],
+  "main": "./dist/index.js",
   "bin": {
     "next-build-parser": "./dist/cli.js"
   },
