@@ -48,15 +48,12 @@ export const parse = (inputFile: string, options?: ExecuteOptions) => {
   const sharedByAllTotal = generateSharedByAllTotal(sharedByAllTotalRow, unit);
   const middleware = generateMiddleware(middlewareRow, unit);
 
-  const output: Record<string, unknown> = {
+  const output = {
+    ...(middleware !== undefined ? { middleware } : {}),
     routes,
     sharedByAll,
     sharedByAllTotal,
     unit,
   };
-
-  if (middleware !== undefined) {
-    output.middleware = middleware;
-  }
   return output;
 };
