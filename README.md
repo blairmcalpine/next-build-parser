@@ -39,11 +39,13 @@ Then you can use it in your code:
 ```typescript
 import { parse } from 'next-build-parser';
 
-const output = parse('next-build.txt');
+const output = parse('next-build.txt', {
+  unit: 'MB',
+});
 console.log(output);
 ```
 
-# Output
+## ➡️ Output
 
 The output is a JSON object with the following structure:
 
@@ -65,3 +67,17 @@ type Output = {
   middleware?: number; // The gzipped size of the middleware in the specified unit, e.g. 1000
 };
 ```
+
+# FAQs
+
+- What is the difference between `firstLoad` and `size`?
+
+  `size` is the gzipped size of the route only, assuming the user has already downloaded the shared JS.
+  This is representative of the download size for a user that has alreaedy visited another route, but is visiting this one for the first time.
+
+  `firstLoad` is the total gzipped size of that route, which includes the shared JS. Other included files are typically shared layout files.
+  This is representative of the download size for a user that is visiting this route for the first time, and has not visited any other route before this.
+
+- Why isn't `firstLoad` the sum of `size` and `sharedTotal`?
+
+  This is usually because there is some other JS included in `sharedTotal` but not exclusive to this route, for example any client-side JS in Next.js layout files.
