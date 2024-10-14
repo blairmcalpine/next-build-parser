@@ -1,5 +1,11 @@
 # next-build-parser
 
+## 1.2.0
+
+### Minor Changes
+
+- 58dd7a8: Separated parse from the new parseFile function
+
 ## 1.1.0
 
 ### Minor Changes
