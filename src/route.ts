@@ -46,17 +46,17 @@ export const generateRoutes = (
       );
       process.exit(1);
     }
-    const routeType = routeTypeMap[result.data[1]];
-    if (!routeType) {
+    const type = routeTypeMap[result.data[1]];
+    if (!type) {
       console.error(
         `Unknown route type icon for row ${row}: ${result.data[1]}`,
       );
       process.exit(1);
     }
     return {
-      routeTypeIcon: result.data[1],
-      routeType,
-      route: result.data[2],
+      name: result.data[2],
+      icon: result.data[1],
+      type,
       size: convertSizeUnit(result.data[3], result.data[4], unit),
       firstLoad: convertSizeUnit(result.data[5], result.data[6], unit),
     };
@@ -86,7 +86,7 @@ export const generateSharedByAll = (rows: string[], unit: SizeUnit) => {
       process.exit(1);
     }
     return {
-      chunk: result.data[1],
+      name: result.data[1],
       size: convertSizeUnit(result.data[2], result.data[3], unit),
     };
   });

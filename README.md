@@ -34,11 +34,34 @@ npm install next-build-parser
 npm run build > next-build.txt
 ```
 
-Then, after you've  you can use it in your code:
+Then you can use it in your code:
 
 ```typescript
 import { parse } from 'next-build-parser';
 
 const output = parse('next-build.txt');
 console.log(output);
+```
+
+# Output
+
+The output is a JSON object with the following structure:
+
+```typescript
+type Output = {
+  routes: {
+    name: string; // The name of the route, e.g. /blog
+    type: string; // The type of the route, e.g. Dynamic, Static, etc.
+    icon: string; // The icon of the route type, e.g. λ
+    size: number; // The gzipped size of the route in the specified unit, e.g. 1000
+    firstLoad: number; // The gzipped size of the first load JS in the specified unit, e.g. 1000
+  }[];
+  shared: {
+    name: string; // The name of the chunk, e.g. chunks/472-9100b5fcfec8f88c.js
+    size: number; // The gzipped size of the chunk in the specified unit, e.g. 1000
+  }[];
+  sharedTotal: number; // The total gzipped size of all the shared chunks in the specified unit, e.g. 1000
+  unit: string; // The unit of the size, e.g. B, KB, MB, etc
+  middleware?: number; // The gzipped size of the middleware in the specified unit, e.g. 1000
+};
 ```

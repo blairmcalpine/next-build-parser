@@ -44,15 +44,15 @@ export const parse = (inputFile: string, options?: ParseOptions) => {
 
   const routeTypeMap = generateRouteTypeMap(routeTypeMapRows);
   const routes = generateRoutes(routeRows, routeTypeMap, unit);
-  const sharedByAll = generateSharedByAll(sharedByAllRows, unit);
-  const sharedByAllTotal = generateSharedByAllTotal(sharedByAllTotalRow, unit);
+  const shared = generateSharedByAll(sharedByAllRows, unit);
+  const sharedTotal = generateSharedByAllTotal(sharedByAllTotalRow, unit);
   const middleware = generateMiddleware(middlewareRow, unit);
 
   const output = {
     ...(middleware !== undefined ? { middleware } : {}),
     routes,
-    sharedByAll,
-    sharedByAllTotal,
+    shared,
+    sharedTotal,
     unit,
   };
   return output;
