@@ -50,8 +50,5 @@
   "dependencies": {
     "commander": "^12.1.0",
     "zod": "^3.23.8"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "npx pretty-quick --staged"
   }
 }
