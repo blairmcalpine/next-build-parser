@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-import { parse } from './parse.js';
 import fs from 'node:fs';
 import { Option, program } from 'commander';
 import { defaultSizeUnit, sizeUnits } from './unit.js';
+import { parseFile } from './parseFile.js';
 
 const unitOption = new Option(
   '-u, --unit <unit>',
@@ -29,14 +29,9 @@ export const cli = (argv: string[]) => {
   program.parse(argv);
   const { output, unit } = program.opts();
   const [inputFile] = program.args;
-  const result = parse(inputFile!, { unit });
+  const result = parseFile(inputFile!, { unit });
   if (output) {
-    try {
-      fs.writeFileSync(output, JSON.stringify(result, null, 2));
-    } catch (error) {
-      console.error(`Error writing to file ${output}: ${error}`);
-      process.exit(1);
-    }
+    fs.writeFileSync(output, JSON.stringify(result, null, 2));
   } else {
     console.log(result);
   }

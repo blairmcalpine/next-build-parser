@@ -1,6 +1,6 @@
 # next-build-parser
 
-🚀 A quick and easy tool to parse the output of [Next.js](https://github.com/vercel/next.js)' `next build` command into machine readable JSON, to fit whatever needs you may have.
+🚀 A quick and easy tool to parse the output of the [Next.js](https://github.com/vercel/next.js) `next build` command into machine readable JSON, to fit whatever needs you may have.
 
 # Usage
 
@@ -38,8 +38,21 @@ Then you can use it in your code:
 
 ```typescript
 import { parse } from 'next-build-parser';
+import { readFileSync } from "node:fs"
 
-const output = parse('next-build.txt', {
+const file = readFileSync('next-build.txt', 'utf8');
+const output = parse(file, {
+  unit: 'MB',
+});
+console.log(output);
+```
+
+or using the more convenient `parseFile` function:
+
+```typescript
+import { parseFile } from 'next-build-parser';
+
+const output = parseFile('next-build.txt', {
   unit: 'MB',
 });
 console.log(output);

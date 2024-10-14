@@ -1,0 +1,84 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`parseFile > should parse the build file 1`] = `
+{
+  "routes": [
+    {
+      "firstLoad": 125,
+      "icon": "λ",
+      "name": "/",
+      "size": 1.1,
+      "type": "Dynamic",
+    },
+    {
+      "firstLoad": 86.2,
+      "icon": "λ",
+      "name": "/_not-found",
+      "size": 0.85,
+      "type": "Dynamic",
+    },
+    {
+      "firstLoad": 0,
+      "icon": "λ",
+      "name": "/api/trpc/[trpc]",
+      "size": 0,
+      "type": "Dynamic",
+    },
+    {
+      "firstLoad": 140,
+      "icon": "λ",
+      "name": "/create",
+      "size": 15.5,
+      "type": "Dynamic",
+    },
+    {
+      "firstLoad": 125,
+      "icon": "λ",
+      "name": "/popular",
+      "size": 1.1,
+      "type": "Dynamic",
+    },
+    {
+      "firstLoad": 132,
+      "icon": "λ",
+      "name": "/puzzle/[id]",
+      "size": 8.15,
+      "type": "Dynamic",
+    },
+    {
+      "firstLoad": 0,
+      "icon": "ℇ",
+      "name": "/puzzle/[id]/opengraph-image",
+      "size": 0,
+      "type": "Edge",
+    },
+    {
+      "firstLoad": 125,
+      "icon": "λ",
+      "name": "/recent",
+      "size": 1.1,
+      "type": "Dynamic",
+    },
+  ],
+  "shared": [
+    {
+      "name": "chunks/472-9100b5fcfec8f88c.js",
+      "size": 30,
+    },
+    {
+      "name": "chunks/fd9d1056-853251486b1823c6.js",
+      "size": 53.3,
+    },
+    {
+      "name": "chunks/main-app-842b2bfec3a562ae.js",
+      "size": 0.23,
+    },
+    {
+      "name": "chunks/webpack-b7a1470890cdd00b.js",
+      "size": 1.79,
+    },
+  ],
+  "sharedTotal": 85.3,
+  "unit": "kB",
+}
+`;

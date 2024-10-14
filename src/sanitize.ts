@@ -12,15 +12,13 @@ const SHARED_BY_ALL_LABEL = 'First Load JS shared by all';
 export const findMarkers = (data: string[]) => {
   const routeMarker = data.findIndex((line) => line.includes(ROUTE_LABEL));
   if (routeMarker === -1) {
-    console.error(`No line containing "${ROUTE_LABEL}" found.`);
-    process.exit(1);
+    throw new Error(`No line containing "${ROUTE_LABEL}" found.`);
   }
   const sharedByAllMarker = data.findIndex((line) =>
     line.includes(SHARED_BY_ALL_LABEL),
   );
   if (sharedByAllMarker === -1) {
-    console.error(`No line containing "${SHARED_BY_ALL_LABEL}" found.`);
-    process.exit(1);
+    throw new Error(`No line containing "${SHARED_BY_ALL_LABEL}" found.`);
   }
   const routeTypeMapMarker = data.findIndex(
     (line, index) =>
@@ -29,10 +27,9 @@ export const findMarkers = (data: string[]) => {
       !line.includes('Middleware'),
   );
   if (routeTypeMapMarker === -1) {
-    console.error(
+    throw new Error(
       `No line describing route types found after "${SHARED_BY_ALL_LABEL}".`,
     );
-    process.exit(1);
   }
   let middlewareMarker: number | undefined = data.findIndex(
     (line, index) => index > sharedByAllMarker && line.includes('Middleware'),

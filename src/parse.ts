@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import fs from 'node:fs';
 import { findMarkers } from './sanitize.js';
 import {
   generateMiddleware,
@@ -11,18 +10,12 @@ import {
 } from './route.js';
 import { defaultSizeUnit, type SizeUnit } from './unit.js';
 
-type ParseOptions = {
+export type ParseOptions = {
   unit?: SizeUnit;
 };
 
-export const parse = (inputFile: string, options?: ParseOptions) => {
-  let data: string[];
-  try {
-    data = fs.readFileSync(inputFile, 'utf8').split('\n').filter(Boolean);
-  } catch (error) {
-    console.error(`Error reading file ${inputFile}: ${error}`);
-    process.exit(1);
-  }
+export const parse = (nextBuildOutput: string, options?: ParseOptions) => {
+  const data = nextBuildOutput.split('\n').filter(Boolean);
   const unit = options?.unit ?? defaultSizeUnit;
 
   const {

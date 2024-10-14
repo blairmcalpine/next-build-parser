@@ -1,167 +1,102 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`execute > should parse the build file 1`] = `
-{
-  "routes": [
-    {
-      "firstLoad": 125,
-      "icon": "λ",
-      "name": "/",
-      "size": 1.1,
-      "type": "Dynamic",
-    },
-    {
-      "firstLoad": 86.2,
-      "icon": "λ",
-      "name": "/_not-found",
-      "size": 0.85,
-      "type": "Dynamic",
-    },
-    {
-      "firstLoad": 0,
-      "icon": "λ",
-      "name": "/api/trpc/[trpc]",
-      "size": 0,
-      "type": "Dynamic",
-    },
-    {
-      "firstLoad": 140,
-      "icon": "λ",
-      "name": "/create",
-      "size": 15.5,
-      "type": "Dynamic",
-    },
-    {
-      "firstLoad": 125,
-      "icon": "λ",
-      "name": "/popular",
-      "size": 1.1,
-      "type": "Dynamic",
-    },
-    {
-      "firstLoad": 132,
-      "icon": "λ",
-      "name": "/puzzle/[id]",
-      "size": 8.15,
-      "type": "Dynamic",
-    },
-    {
-      "firstLoad": 0,
-      "icon": "ℇ",
-      "name": "/puzzle/[id]/opengraph-image",
-      "size": 0,
-      "type": "Edge",
-    },
-    {
-      "firstLoad": 125,
-      "icon": "λ",
-      "name": "/recent",
-      "size": 1.1,
-      "type": "Dynamic",
-    },
-  ],
-  "shared": [
-    {
-      "name": "chunks/472-9100b5fcfec8f88c.js",
-      "size": 30,
-    },
-    {
-      "name": "chunks/fd9d1056-853251486b1823c6.js",
-      "size": 53.3,
-    },
-    {
-      "name": "chunks/main-app-842b2bfec3a562ae.js",
-      "size": 0.23,
-    },
-    {
-      "name": "chunks/webpack-b7a1470890cdd00b.js",
-      "size": 1.79,
-    },
-  ],
-  "sharedTotal": 85.3,
-  "unit": "kB",
-}
+exports[`parse > middleware > should output based on the unit option 1`] = `0`;
+
+exports[`parse > routes > should output based on the unit option 1`] = `
+[
+  1126.4,
+  875,
+  0,
+  15872,
+  1126.4,
+  8345.6,
+  0,
+  1126.4,
+]
 `;
 
-exports[`execute > should parse the build file and output based on the unit option 1`] = `
-{
-  "routes": [
-    {
-      "firstLoad": 128000,
-      "icon": "λ",
-      "name": "/",
-      "size": 1126.4,
-      "type": "Dynamic",
-    },
-    {
-      "firstLoad": 88268.8,
-      "icon": "λ",
-      "name": "/_not-found",
-      "size": 875,
-      "type": "Dynamic",
-    },
-    {
-      "firstLoad": 0,
-      "icon": "λ",
-      "name": "/api/trpc/[trpc]",
-      "size": 0,
-      "type": "Dynamic",
-    },
-    {
-      "firstLoad": 143360,
-      "icon": "λ",
-      "name": "/create",
-      "size": 15872,
-      "type": "Dynamic",
-    },
-    {
-      "firstLoad": 128000,
-      "icon": "λ",
-      "name": "/popular",
-      "size": 1126.4,
-      "type": "Dynamic",
-    },
-    {
-      "firstLoad": 135168,
-      "icon": "λ",
-      "name": "/puzzle/[id]",
-      "size": 8345.6,
-      "type": "Dynamic",
-    },
-    {
-      "firstLoad": 0,
-      "icon": "ℇ",
-      "name": "/puzzle/[id]/opengraph-image",
-      "size": 0,
-      "type": "Edge",
-    },
-    {
-      "firstLoad": 128000,
-      "icon": "λ",
-      "name": "/recent",
-      "size": 1126.4,
-      "type": "Dynamic",
-    },
-  ],
-  "shared": [
-    {
-      "name": "chunks/472-9100b5fcfec8f88c.js",
-      "size": 30720,
-    },
-    {
-      "name": "chunks/fd9d1056-853251486b1823c6.js",
-      "size": 54579.2,
-    },
-    {
-      "name": "chunks/main-app-842b2bfec3a562ae.js",
-      "size": 231,
-    },
-    {
-      "name": "chunks/webpack-b7a1470890cdd00b.js",
-      "size": 1832.96,
-    },
-  ],
-  "sharedTotal": 87347.2,
-  "unit": "B",
-}
+exports[`parse > routes > should output based on the unit option 2`] = `
+[
+  128000,
+  88268.8,
+  0,
+  143360,
+  128000,
+  135168,
+  0,
+  128000,
+]
 `;
+
+exports[`parse > routes > should output the correct route icon 1`] = `
+[
+  "λ",
+  "λ",
+  "λ",
+  "λ",
+  "λ",
+  "λ",
+  "ℇ",
+  "λ",
+]
+`;
+
+exports[`parse > routes > should output the correct route name 1`] = `
+[
+  "/",
+  "/_not-found",
+  "/api/trpc/[trpc]",
+  "/create",
+  "/popular",
+  "/puzzle/[id]",
+  "/puzzle/[id]/opengraph-image",
+  "/recent",
+]
+`;
+
+exports[`parse > routes > should output the correct route type 1`] = `
+[
+  "Dynamic",
+  "Dynamic",
+  "Dynamic",
+  "Dynamic",
+  "Dynamic",
+  "Dynamic",
+  "Edge",
+  "Dynamic",
+]
+`;
+
+exports[`parse > shared > should output based on the unit option 1`] = `
+[
+  {
+    "name": "chunks/472-9100b5fcfec8f88c.js",
+    "size": 30720,
+  },
+  {
+    "name": "chunks/fd9d1056-853251486b1823c6.js",
+    "size": 54579.2,
+  },
+  {
+    "name": "chunks/main-app-842b2bfec3a562ae.js",
+    "size": 231,
+  },
+  {
+    "name": "chunks/webpack-b7a1470890cdd00b.js",
+    "size": 1832.96,
+  },
+]
+`;
+
+exports[`parse > shared > should output the correct names 1`] = `
+[
+  "chunks/472-9100b5fcfec8f88c.js",
+  "chunks/fd9d1056-853251486b1823c6.js",
+  "chunks/main-app-842b2bfec3a562ae.js",
+  "chunks/webpack-b7a1470890cdd00b.js",
+]
+`;
+
+exports[`parse > shared > should output the correct other chunks 1`] = `[]`;
+
+exports[`parse > shared > should output the correct shared by all total 1`] = `85.3`;
