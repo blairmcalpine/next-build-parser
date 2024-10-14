@@ -38,7 +38,7 @@ Then you can use it in your code:
 
 ```typescript
 import { parse } from 'next-build-parser';
-import { readFileSync } from "node:fs"
+import { readFileSync } from 'node:fs';
 
 const file = readFileSync('next-build.txt', 'utf8');
 const output = parse(file, {
