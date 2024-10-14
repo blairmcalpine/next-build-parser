@@ -1,7 +1,7 @@
 {
   "name": "next-build-parser",
   "version": "1.0.1",
-  "description": "Parse the output of next build into machine readable JSON",
+  "description": "Parse the output of next build into machine readable JSON.",
   "keywords": [
     "nextjs",
     "next.js",
@@ -47,6 +47,7 @@
     "vitest": "^2.1.2"
   },
   "dependencies": {
+    "commander": "^12.1.0",
     "zod": "^3.23.8"
   }
 }

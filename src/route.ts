@@ -46,9 +46,16 @@ export const generateRoutes = (
       );
       process.exit(1);
     }
+    const routeType = routeTypeMap[result.data[1]];
+    if (!routeType) {
+      console.error(
+        `Unknown route type icon for row ${row}: ${result.data[1]}`,
+      );
+      process.exit(1);
+    }
     return {
       routeTypeIcon: result.data[1],
-      routeType: routeTypeMap[result.data[1]],
+      routeType,
       route: result.data[2],
       size: convertSizeUnit(result.data[3], result.data[4], unit),
       firstLoad: convertSizeUnit(result.data[5], result.data[6], unit),

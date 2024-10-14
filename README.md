@@ -19,6 +19,12 @@ This will output a JSON object to stdout. If you would like to output it to a fi
 npx next-build-parser next-build.txt --output output.json
 ```
 
+For other CLI options, run:
+
+```bash
+npx next-build-parser --help
+```
+
 ## 📦 In Code
 
 First, install the package, and then run `next build` to generate the output file:

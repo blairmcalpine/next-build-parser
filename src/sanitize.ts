@@ -1,6 +1,3 @@
-import { z } from 'zod';
-import { defaultSizeUnit, sizeUnitSchema } from './unit.js';
-
 export const sanitizeRow = (row: string) => {
   return row
     .trim()
@@ -51,46 +48,3 @@ export const findMarkers = (data: string[]) => {
     middlewareMarker,
   };
 };
-
-const parseArg = <S extends z.ZodSchema>(
-  argv: string[],
-  argName: number | string,
-  schema: S,
-  options?: { defaultValue?: z.infer<S> },
-): z.infer<S> => {
-  let arg: string | undefined;
-  if (typeof argName === 'number') {
-    arg = argv[argName];
-  } else {
-    const argIndex = argv.indexOf(argName);
-    arg = argIndex > 0 ? argv[argIndex + 1] : options?.defaultValue;
-  }
-  const result = schema.safeParse(arg);
-  if (!result.success) {
-    if (typeof argName === 'string') {
-      console.error(
-        `Invalid ${argName} option: ${arg}. Values must be fit the following description: ${schema.description}`,
-      );
-    } else {
-      const dots = '... '.repeat(argName - 2);
-      console.error(
-        `Argument ${argName - 1} is invalid.\nUsage: next-build-parser ${dots}${schema.description}`,
-      );
-    }
-    process.exit(1);
-  }
-  return result.data;
-};
-
-export const parseOutputFileArg = (argv: string[]) =>
-  parseArg(
-    argv,
-    '--output',
-    z.string().optional().describe('Any string type.'),
-  );
-
-export const parseUnitArg = (argv: string[]) =>
-  parseArg(argv, '--unit', sizeUnitSchema, { defaultValue: defaultSizeUnit });
-
-export const parsePrimaryArg = (argv: string[]) =>
-  parseArg(argv, 2, z.string().describe('<Output file of next build>'));

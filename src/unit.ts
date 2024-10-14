@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-const sizeUnits = [
+export const sizeUnits = [
   'B',
   'kB',
   'MB',

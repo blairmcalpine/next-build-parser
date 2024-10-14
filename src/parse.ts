@@ -11,11 +11,11 @@ import {
 } from './route.js';
 import { defaultSizeUnit, type SizeUnit } from './unit.js';
 
-type ExecuteOptions = {
+type ParseOptions = {
   unit?: SizeUnit;
 };
 
-export const parse = (inputFile: string, options?: ExecuteOptions) => {
+export const parse = (inputFile: string, options?: ParseOptions) => {
   let data: string[];
   try {
     data = fs.readFileSync(inputFile, 'utf8').split('\n').filter(Boolean);
