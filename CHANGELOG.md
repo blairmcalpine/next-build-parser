@@ -1,5 +1,11 @@
 # next-build-parser
 
+## 1.3.0
+
+### Minor Changes
+
+- ec97da4: Add CJS support
+
 ## 1.2.0
 
 ### Minor Changes
